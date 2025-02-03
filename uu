@@ -46,8 +46,6 @@ class book
 	}
 };
 	
-	//class end here
-	
 	class student
 	{
 		char admno[6];

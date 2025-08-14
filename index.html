@@ -1,1 +1,130 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Floating Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(6px);
+            transition: transform 0.3s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px);}
+            50% { transform: translateY(-20px);}
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 30px 20px;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: #2d3a4b;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #4b6584;
+            margin-top: 12px;
+        }
+        .portfolio-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            padding: 40px 20px;
+        }
+        .card {
+            width: 320px;
+            padding: 32px 24px;
+            margin: 0;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(44, 62, 80, 0.18);
+            transform: translateY(-8px) scale(1.03);
+        }
+        .card h2 {
+            font-size: 1.4rem;
+            color: #3867d6;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #4b6584;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        .floating-bg {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3867d6 60%, #f7b731 100%);
+            border-radius: 50%;
+            opacity: 0.18;
+            z-index: 0;
+            animation: float 4s ease-in-out infinite;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #778ca3;
+            font-size: 1rem;
+        }
+        @media (max-width: 700px) {
+            .portfolio-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="floating">
+        <h1>Jane Doe</h1>
+        <p>Creative Web Developer & Designer</p>
+    </header>
+    <section class="portfolio-section">
+        <div class="card floating">
+            <div class="floating-bg"></div>
+            <h2>Personal Website</h2>
+            <p>Responsive, animated personal site built with HTML, CSS, and JavaScript. Features floating cards and smooth transitions.</p>
+        </div>
+        <div class="card floating" style="animation-delay: 1s;">
+            <div class="floating-bg"></div>
+            <h2>UI Design Project</h2>
+            <p>Modern UI/UX design for a mobile app, focusing on user-friendly layouts and interactive elements.</p>
+        </div>
+        <div class="card floating" style="animation-delay: 2s;">
+            <div class="floating-bg"></div>
+            <h2>Portfolio Gallery</h2>
+            <p>Animated gallery showcasing creative works with floating effects and engaging hover interactions.</p>
+        </div>
+    </section>
+    <footer class="floating">
+        &copy; 2024 Jane Doe. All rights reserved.
+    </footer>
+</body>
+</html>
